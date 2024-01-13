@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./style.css">
+    <title>Cadastro de Clientes e Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Cadastro de Clientes</h2>
+    <h3> Atendimento em 5seg </h3>
+    <form method="post" id="clienteForm"> 
+        
+        <label for="nome do Cliente">Nome do Cliente:</label>
+        <input type="text" id="nomeCliente" name="nomeCliente" required>
+
+        <label for="documentoCliente">Documento:</label>
+        <input type="text" id="documentoCliente" name="documentoCliente" required>
+
+        <label for="telefoneCliente">Telefone:</label>
+        <input type="text" id="telefoneCliente" name="telefoneCliente" required>
+
+        <label for="emailCliente">E-mail:</label>
+        <input type="email" id="emailCliente" name="emailCliente" required>
+
+        <label for="ativoCliente">Ativo:</label>
+        <select id="ativoCliente" name="ativoCliente">
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
+        </select>
+
+        <button type="submit">Cadastrar Cliente</button>
+    </>
+
+    <h2>Cadastro de Produtos</h2>
+    <form action="#" method="post" id="produtoForm">
+        <label for="nomeProduto">Nome do Produto:</label>
+        <input type="text" id="nomeProduto" name="nomeProduto" required>
+
+        <label for="ativoProduto">Ativo:</label>
+        <select id="ativoProduto" name="ativoProduto">
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
+        </select>
+
+        <button type="submit">Cadastrar Produto</button>
+    </form>
+
+    <h2>Associação de Produtos aos Clientes</h2>
+    <form action="#" method="post" id="associacaoForm">
+        <label for="clienteAssoc">Cliente:</label>
+        <select id="clienteAssoc" name="clienteAssoc">
+            <!-- Aqui, você precisará preencher dinamicamente com os clientes cadastrados -->
+            <option value="1">Cliente 1</option>
+            <option value="2">Cliente 2</option>
+            <!-- Adicione mais opções conforme necessário -->
+        </select>
+
+        <label for="produtoAssoc">Produto:</label>
+        <select id="produtoAssoc" name="produtoAssoc">
+            <!-- Aqui, você precisará preencher dinamicamente com os produtos cadastrados -->
+            <option value="1">Produto 1</option>
+            <option value="2">Produto 2</option>
+            <!-- Adicione mais opções conforme necessário -->
+        </select>
+
+        <button type="submit">Associar Produto</button>
+    </form>
+
+</body>
+</html>
+<h2>Listagem de Produtos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome do Produto</th>
+            <th>Ativo</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aqui, você precisará preencher dinamicamente com os produtos cadastrados -->
+        <tr>
+            <td>1</td>
+            <td>Produto 1</td>
+            <td>Sim</td>
+            <td>
+                <button onclick="editarProduto(1)">Editar</button>
+                <button onclick="inativarAtivarProduto(1)">Inativar/Ativar</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Produto 2</td>
+            <td>Não</td>
+            <td>
+                <button onclick="editarProduto(2)">Editar</button>
+                <button onclick="inativarAtivarProduto(2)">Inativar/Ativar</button>
+            </td>
+        </tr>
+        <!-- Adicione mais linhas conforme necessário -->
+    </tbody>
+</table>
+
+<script>
+    function editarProduto(id) {
+        // Lógica para redirecionar para a página de edição do produto com o ID específico
+        window.location.href = 'editar_produto.html?id=' + id;
+    }
+
+    function inativarAtivarProduto(id) {
+        // Lógica para inativar ou ativar o produto com o ID específico
+        alert('Inativar/Ativar produto com ID ' + id);
+    }
+</script>
+
+</body>
+</html>
